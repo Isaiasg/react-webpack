@@ -1,8 +1,16 @@
 import index from './index.html';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import ButtonComponent from './components/ButtonComponent.jsx';
+
+const App = () => (
+  <MuiThemeProvider>
+    <ButtonComponent />
+  </MuiThemeProvider>
+);
 
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('root')
+  <App />,
+  document.getElementById('app')
 );
