@@ -1,16 +1,20 @@
 import index from './index.html';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import configureStore from './store/configureStore';
+import {Provider} from 'react-redux';
 import ButtonComponent from './components/ButtonComponent.jsx';
 
+const store = configureStore();
+
+
 const App = () => (
-  <MuiThemeProvider>
     <ButtonComponent />
-  </MuiThemeProvider>
 );
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('app')
+  <Provider store = {store}>
+    <App />
+  </Provider>
+  ,  document.getElementById('app')
 );
